@@ -7,7 +7,6 @@ import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = ({ cartItemsLocal }) => {
-  console.log({ cartItemsLocal });
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
@@ -17,7 +16,7 @@ const CartDropdown = ({ cartItemsLocal }) => {
           <span>No hay elementos en su carrito</span>
         )}
       </div>
-      <CustomButton>CHECKOUT</CustomButton>
+      <CustomButton>GO TO CHECKOUT</CustomButton>
     </div>
   );
 };

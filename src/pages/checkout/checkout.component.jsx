@@ -30,12 +30,21 @@ const CheckoutPage = ({ cartItems, total }) => {
           <span>Remove</span>
         </div>
       </div>
-      {cartItems.map(cartItem => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      ))}
-      <div className="total">
-        <span>TOTAL: ${total}</span>
-      </div>
+      {cartItems.length ? (
+        cartItems.map(cartItem => (
+          <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+        ))
+      ) : (
+        <span className="empty-cart">No hay items</span>
+      )}
+
+      {cartItems.length ? (
+        <div className="total">
+          <span>TOTAL: ${total}</span>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

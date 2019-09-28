@@ -10,6 +10,8 @@ import {
 import "./checkout.styles.scss";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 
+import StripeButton from "./../../components/stripe-button/stripe-button.component";
+
 const CheckoutPage = ({ cartItems, total }) => {
   return (
     <div className="checkout-page">
@@ -45,6 +47,13 @@ const CheckoutPage = ({ cartItems, total }) => {
       ) : (
         <div></div>
       )}
+
+      <div className="test-warning">
+        * Please use the following CC info
+        <br />
+        4242 4242 4242 4242 :: 01/20 :: 123
+      </div>
+      <StripeButton price={total}></StripeButton>
     </div>
   );
 };

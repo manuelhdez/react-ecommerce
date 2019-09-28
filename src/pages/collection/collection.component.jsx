@@ -22,8 +22,13 @@ const CollectionPage = ({ match, collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  const {
+    match: {
+      params: { collectionId }
+    }
+  } = ownProps;
   return {
-    collection: selectCollection(ownProps.match.params.collectionId)(state)
+    collection: selectCollection(collectionId)(state)
   };
 };
 
